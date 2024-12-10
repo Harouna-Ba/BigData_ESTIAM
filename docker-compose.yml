@@ -1,0 +1,87 @@
+services:
+# # # # # # # # # # # # # # # # 
+##### Day 2 - EDA / KAFKA #####
+# # # # # # # # # # # # # # # # 
+  # Zookeeper est là pour faire une mémoire partagée
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  # Définition de mon broker KAFKA
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "test_topic:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  producer:
+    build: ./producer
+    volumes:
+      - ./producer:/app
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+    command: python -u producer.py
+
+  consumer:
+    build: ./consumer 
+    volumes:
+      - ./consumer:/app
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+    command: python -u consumer.py
+
+# # # # # # # # # # # # #
+##### Day 3 - HADOOP ####
+# # # # # # # # # # # # # 
+  namenode: # Controle le stockage dans les datanode
+    image: apache/hadoop:3.4.1 #CentOS7
+    hostname: namenode
+    volumes:
+      - ./namenode/Makefile:/opt/hadoop/Makefile # fichier qui contient les scripts d'initialisation du container
+      - ./spark-scripts:/opt/zeppelin/notebook/spark-scripts
+    ports:
+      - 9870:9870 # HDFS webUI
+      - 8080:8080 # Zeppelin webUI
+    env_file:
+      - ./config.env
+    environment:
+      # Définition du répertoire de stockage des métadonnées du NameNode
+      ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+    command: bash -c "sudo sed -i -e '/^mirrorlist/d;/^#baseurl=/{s,^#,,;s,/mirror,/vault,;}' /etc/yum.repos.d/CentOS*.repo && sudo yum -y update && sudo yum clean all && sudo yum install -y make && sudo make install-spark && make install-zeppelin && make start-namenode"
+
+  datanode_1: # Stocke des datablocks
+    image: apache/hadoop:3.4.1
+    command: ['hdfs', 'datanode']
+    env_file:
+      - ./config.env
+  datanode_2: # Stocke des datablocks
+    image: apache/hadoop:3.4.1
+    command: ['hdfs', 'datanode']
+    env_file:
+      - ./config.env
+
+  resourcemanager: # gestion des ressources
+    image: apache/hadoop:3.4.1
+    hostname: resourcemanager
+    command: ['yarn','resourcemanager'] # Commande de démarrage du resource manager YARN
+    ports:
+      - 8088:8088 # YARN webUI
+    env_file:
+      - ./config.env
+  nodemanager: #  Gestion des noeuds
+    image: apache/hadoop:3.4.1
+    command: ['yarn','nodemanager']
+    env_file:
+      - ./config.env
