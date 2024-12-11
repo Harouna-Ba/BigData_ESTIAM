@@ -59,7 +59,20 @@ services:
     environment:
       # Définition du répertoire de stockage des métadonnées du NameNode
       ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
-    command: bash -c "sudo sed -i -e '/^mirrorlist/d;/^#baseurl=/{s,^#,,;s,/mirror,/vault,;}' /etc/yum.repos.d/CentOS*.repo && sudo yum -y update && sudo yum clean all && sudo yum install -y make && sudo make install-spark && make install-zeppelin && make start-namenode"
+    command: bash -c "\
+      if ! rpm -q make > /dev/null 2>&1; then \
+        echo 'Make not found. Installing...'; \
+        sudo sed -i -e '/^mirrorlist/d;/^#baseurl=/{s,^#,,;s,/mirror,/vault,;}' /etc/yum.repos.d/CentOS*.repo && \
+        sudo yum -y update && \
+        sudo yum clean all && \
+        sudo yum install -y make; \
+      else \
+        echo 'Make is already installed.'; \
+      fi && \
+      sudo make install-spark; \
+      sudo make install-python3; \
+      make install-zeppelin; \
+      make start-namenode"
 
   datanode_1: # Stocke des datablocks
     image: apache/hadoop:3.4.1
