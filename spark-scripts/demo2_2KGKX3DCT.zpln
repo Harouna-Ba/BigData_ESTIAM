@@ -1,0 +1,344 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nsales_data \u003d spark.read.option(\"header\", True).csv(\"hdfs://namenode:8020/sample_data/sales-data-sample.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-11 09:58:09.319",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d0"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733911047312_1915995800",
+      "id": "paragraph_1733911047312_1915995800",
+      "dateCreated": "2024-12-11 09:57:27.312",
+      "dateStarted": "2024-12-11 09:58:09.344",
+      "dateFinished": "2024-12-11 09:58:52.332",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nsales_data.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-11 09:59:14.347",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+---------------+------------+-------------+----------------+--------+--------------+----------+--------------------+------+--------+-------+-----+-----------+--------------------+--------------+------------+------------+----------------+-------------+---------------+-------------------+---------------+----------------+-----------+----------------+--------+---------+\n|           OrderDate|       Category|        City|      Country|    CustomerName|Discount|       OrderID|PostalCode|         ProductName|Profit|Quantity| Region|Sales|    Segment|            ShipDate|      ShipMode|       State|Sub_Category|DaystoShipActual|SalesForecast|     ShipStatus|DaystoShipScheduled|OrderProfitable|SalesperCustomer|ProfitRatio|SalesaboveTarget|latitude|longitude|\n+--------------------+---------------+------------+-------------+----------------+--------+--------------+----------+--------------------+------+--------+-------+-----+-----------+--------------------+--------------+------------+------------+----------------+-------------+---------------+-------------------+---------------+----------------+-----------+----------------+--------+---------+\n|2011-01-04T00:00:...|Office Supplies|     Houston|United States|   Darren Powers|     0.2|CA-2011-103800|     77095|Message Book, Wir...|     6|       2|Central|   16|   Consumer|2011-01-08T00:00:...|Standard Class|       Texas|       Paper|               4|           22|  Shipped Early|                  6|           null|           16.45|       33.8|            null| 29.8941| -95.6481|\n|2011-01-05T00:00:...|Office Supplies|  Naperville|United States|   Phillina Ober|     0.2|CA-2011-112326|     60540|           Avery 508|     4|       3|Central|   12|Home Office|2011-01-09T00:00:...|Standard Class|    Illinois|      Labels|               4|           15|  Shipped Early|                  6|           null|           11.78|       36.3|            null| 41.7662|  -88.141|\n|2011-01-05T00:00:...|Office Supplies|  Naperville|United States|   Phillina Ober|     0.8|CA-2011-112326|     60540|GBC Standard Plas...|    -5|       2|Central|    4|Home Office|2011-01-09T00:00:...|Standard Class|    Illinois|     Binders|               4|            5|  Shipped Early|                  6|           null|            3.54|     -155.0|            null| 41.7662|  -88.141|\n|2011-01-05T00:00:...|Office Supplies|  Naperville|United States|   Phillina Ober|     0.2|CA-2011-112326|     60540|SAFCO Boltless St...|   -65|       3|Central|  273|Home Office|2011-01-09T00:00:...|Standard Class|    Illinois|     Storage|               4|          357|  Shipped Early|                  6|           null|          272.74|      -23.8|            null| 41.7662|  -88.141|\n|2011-01-06T00:00:...|Office Supplies|Philadelphia|United States|      Mick Brown|     0.2|CA-2011-141817|     19143|Avery Hi-Liter Ev...|     5|       3|   East|   20|   Consumer|2011-01-13T00:00:...|Standard Class|Pennsylvania|         Art|               7|           26|   Shipped Late|                  6|           null|           19.54|       25.0|            null| 39.9448| -75.2288|\n|2011-01-07T00:00:...|      Furniture|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Global Deluxe Hig...|   746|       9|  South| 2574|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|      Chairs|               4|         3373|  Shipped Early|                  6|           null|         2573.82|       29.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|      Athens|United States|    Jack OBriant|     0.0|CA-2011-106054|     30605|Dixon Prang Water...|     5|       3|  South|   13|  Corporate|2011-01-08T00:00:...|   First Class|     Georgia|         Art|               1|           17|Shipped On Time|                  1|           null|           12.78|       41.0|            null| 33.9321| -83.3525|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Alliance Super-Si...|     0|       4|  South|   31|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|   Fasteners|               4|           41|  Shipped Early|                  6|           null|           31.12|        1.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Ibico Hi-Tech Man...|   274|       2|  South|  610|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|     Binders|               4|          799|  Shipped Early|                  6|           null|          609.98|       45.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Rogers Handheld B...|     1|       2|  South|    5|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|         Art|               4|            7|  Shipped Early|                  6|           null|            5.48|       27.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Southworth 25% Co...|     3|       1|  South|    7|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|       Paper|               4|            9|  Shipped Early|                  6|           null|            6.54|       46.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|Office Supplies| Los Angeles|United States|Lycoris Saunders|     0.0|CA-2011-130813|     90049|           Xerox 225|     9|       3|   West|   19|   Consumer|2011-01-09T00:00:...|  Second Class|  California|       Paper|               2|           25|  Shipped Early|                  3|           null|           19.44|       48.0|            null|  34.066| -118.474|\n|2011-01-07T00:00:...|     Technology|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|         GE 30524EE4|   114|       2|  South|  392|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|      Phones|               4|          514|  Shipped Early|                  6|           null|          391.98|       29.0|            null| 37.8274| -87.5632|\n|2011-01-07T00:00:...|     Technology|   Henderson|United States|   Maria Etezadi|     0.0|CA-2011-167199|     42420|Wireless Extender...|   204|       4|  South|  756|Home Office|2011-01-11T00:00:...|Standard Class|    Kentucky|      Phones|               4|          991|  Shipped Early|                  6|           null|          755.96|       27.0|            null| 37.8274| -87.5632|\n|2011-01-08T00:00:...|      Furniture|  Huntsville|United States|Vivek Sundaresam|     0.6|CA-2011-105417|     77340|Howard Miller 14-...|   -54|       3|Central|   77|   Consumer|2011-01-13T00:00:...|Standard Class|       Texas| Furnishings|               5|          101|  Shipped Early|                  6|           null|           76.73|      -70.0|            null| 30.6448| -95.5798|\n|2011-01-08T00:00:...|Office Supplies|  Huntsville|United States|Vivek Sundaresam|     0.8|CA-2011-105417|     77340|Acco Four Pocket ...|   -18|       7|Central|   10|   Consumer|2011-01-13T00:00:...|Standard Class|       Texas|     Binders|               5|           14|  Shipped Early|                  6|           null|           10.43|     -175.0|            null| 30.6448| -95.5798|\n|2011-01-10T00:00:...|Office Supplies|      Laredo|United States|   Melanie Seite|     0.2|CA-2011-135405|     78041|          Newell 312|     1|       2|Central|    9|   Consumer|2011-01-14T00:00:...|Standard Class|       Texas|         Art|               4|           12|  Shipped Early|                  6|           null|            9.34|       12.5|            null| 27.5569| -99.4907|\n|2011-01-10T00:00:...|     Technology|      Laredo|United States|   Melanie Seite|     0.2|CA-2011-135405|     78041|Memorex Micro Tra...|    10|       3|Central|   31|   Consumer|2011-01-14T00:00:...|Standard Class|       Texas| Accessories|               4|           41|  Shipped Early|                  6|           null|            31.2|       31.3|            null| 27.5569| -99.4907|\n|2011-01-11T00:00:...|      Furniture| Springfield|United States|  Anthony Jacobs|     0.0|CA-2011-149020|     22153|Howard Miller 11-...|    21|       1|  South|   52|  Corporate|2011-01-16T00:00:...|Standard Class|    Virginia| Furnishings|               5|           68|  Shipped Early|                  6|           null|           51.94|       41.0|            null| 38.7449|  -77.237|\n|2011-01-11T00:00:...|Office Supplies| Springfield|United States|  Anthony Jacobs|     0.0|CA-2011-149020|     22153|           Avery 482|     1|       1|  South|    3|  Corporate|2011-01-16T00:00:...|Standard Class|    Virginia|      Labels|               5|            4|  Shipped Early|                  6|           null|            2.89|       47.0|            null| 38.7449|  -77.237|\n+--------------------+---------------+------------+-------------+----------------+--------+--------------+----------+--------------------+------+--------+-------+-----+-----------+--------------------+--------------+------------+------------+----------------+-------------+---------------+-------------------+---------------+----------------+-----------+----------------+--------+---------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733911089342_1494000253",
+      "id": "paragraph_1733911089342_1494000253",
+      "dateCreated": "2024-12-11 09:58:09.344",
+      "dateStarted": "2024-12-11 09:59:14.367",
+      "dateFinished": "2024-12-11 09:59:16.023",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nweather_data \u003d spark.read.option(\"header\", True).option(\"delimiter\", \";\").csv(\"hdfs://namenode:8020/sample_data/dataset-meteo-paris-1950-2022.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-11 10:06:33.222",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d2"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733911154364_684876832",
+      "id": "paragraph_1733911154364_684876832",
+      "dateCreated": "2024-12-11 09:59:14.370",
+      "dateStarted": "2024-12-11 10:06:33.244",
+      "dateFinished": "2024-12-11 10:06:34.660",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n# Convert necessary columns to appropriate data types\nfrom pyspark.sql.functions import col\n\nweather_data \u003d weather_data.withColumn(\"AAAAMM\", col(\"AAAAMM\").cast(\"int\")) \\\n                       .withColumn(\"TX\", col(\"TX\").cast(\"float\"))\n\n# Filter for December data (where AAAAMM ends with 12)\ndecember_data \u003d weather_data.filter((col(\"AAAAMM\") % 100) \u003d\u003d 12)\n\n# Calculate the average temperature (TX)\naverage_tx \u003d december_data.selectExpr(\"AVG(TX) as average_tx\").collect()[0][\"average_tx\"]\n\nprint(f\"Average temperature in December: {average_tx}\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-11 10:12:21.405",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Average temperature in December: 7.950960657147781\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d9"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d10"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733911593241_1424292940",
+      "id": "paragraph_1733911593241_1424292940",
+      "dateCreated": "2024-12-11 10:06:33.244",
+      "dateStarted": "2024-12-11 10:12:21.422",
+      "dateFinished": "2024-12-11 10:12:22.882",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql import SparkSession\n\n# Kafka broker and topic\nkafka_broker \u003d \"kafka:9092\"\nkafka_topic \u003d \"test_topic\"\n\n# Initialize Spark Session\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkMemorySink\") \\\n    .getOrCreate()\n\n# Read data from Kafka topic\nkafka_stream \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", kafka_broker) \\\n    .option(\"subscribe\", kafka_topic) \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\n# Select message value and convert to string\nmessages \u003d kafka_stream.selectExpr(\"CAST(value AS STRING) as message\")\n\n# Write to memory sink\nquery \u003d messages.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"memory\") \\\n    .queryName(\"kafka_messages\") \\\n    .start()\n\n# Simulate Micro Batch processing\nimport time\nprint(\"Streaming started... Run the following to view data:\")\nprint(\"spark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\")\n\n# Let the stream run indefinitely\ntry:\n    while True:\n        time.sleep(10)\n        spark.sql(\"SELECT * FROM kafka_messages\").show(truncate\u003dFalse)\nexcept KeyboardInterrupt:\n    print(\"Stream stopped.\")\n    query.stop()    ",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-11 10:18:20.799",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Streaming started... Run the following to view data:\nspark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733912303.7322135, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912306.0097415, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912308.3422863, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912310.664875, \"city\": \"Paris\"} |\n+--------------------------------------------------------------------+\n\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733912303.7322135, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912306.0097415, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912308.3422863, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912310.664875, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912312.9358342, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912315.2799582, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912317.5219193, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912319.7656522, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912322.1071076, \"city\": \"Paris\"}|\n+--------------------------------------------------------------------+\n\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733912303.7322135, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912306.0097415, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912308.3422863, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912310.664875, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912312.9358342, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912315.2799582, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912317.5219193, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912319.7656522, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912322.1071076, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912324.3836257, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912326.7390556, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912329.0029469, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912331.2873244, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912333.6224012, \"city\": \"Paris\"}|\n+--------------------------------------------------------------------+\n\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733912303.7322135, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912306.0097415, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912308.3422863, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912310.664875, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912312.9358342, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912315.2799582, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912317.5219193, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912319.7656522, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912322.1071076, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912324.3836257, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912326.7390556, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912329.0029469, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912331.2873244, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912333.6224012, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912335.8669298, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912338.2259095, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912340.554115, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912342.7980545, \"city\": \"Paris\"}|\n+--------------------------------------------------------------------+\n\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733912303.7322135, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912306.0097415, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912308.3422863, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912310.664875, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912312.9358342, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912315.2799582, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912317.5219193, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912319.7656522, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912322.1071076, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912324.3836257, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912326.7390556, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912329.0029469, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912331.2873244, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912333.6224012, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912335.8669298, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912338.2259095, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912340.554115, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912342.7980545, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912345.148596, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912347.404857, \"city\": \"Paris\"} |\n+--------------------------------------------------------------------+\nonly showing top 20 rows\n\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733912303.7322135, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912306.0097415, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912308.3422863, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912310.664875, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912312.9358342, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912315.2799582, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912317.5219193, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912319.7656522, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912322.1071076, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912324.3836257, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912326.7390556, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912329.0029469, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912331.2873244, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912333.6224012, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912335.8669298, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912338.2259095, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912340.554115, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912342.7980545, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733912345.148596, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733912347.404857, \"city\": \"Paris\"} |\n+--------------------------------------------------------------------+\nonly showing top 20 rows\n\nStream stopped.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d15"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d16"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d22"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d23"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d24"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d30"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d31"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d32"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d37"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d38"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d39"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d45"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d46"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d47"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d53"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d54"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d55"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733911890965_1328389489",
+      "id": "paragraph_1733911890965_1328389489",
+      "dateCreated": "2024-12-11 10:11:30.967",
+      "dateStarted": "2024-12-11 10:18:20.830",
+      "dateFinished": "2024-12-11 10:19:32.157",
+      "status": "ABORT"
+    },
+    {
+      "text": "%spark.pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-11 10:18:20.832",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733912300826_326317857",
+      "id": "paragraph_1733912300826_326317857",
+      "dateCreated": "2024-12-11 10:18:20.832",
+      "status": "READY"
+    }
+  ],
+  "name": "demo2",
+  "id": "2KGKX3DCT",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

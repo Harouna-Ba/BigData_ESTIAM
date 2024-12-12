@@ -1,0 +1,181 @@
+{
+  "paragraphs": [
+    {
+      "text": "import sys\nprint(sys.version)",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 15:38:35.283",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:1: \u001b[31merror: \u001b[0m. expected\n       import sys\n                 ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733844578518_1614087091",
+      "id": "paragraph_1733844578518_1614087091",
+      "dateCreated": "2024-12-10 15:29:38.518",
+      "dateStarted": "2024-12-10 15:38:35.310",
+      "dateFinished": "2024-12-10 15:39:03.714",
+      "status": "ERROR"
+    },
+    {
+      "text": "%spark.pyspark\nimport sys\nprint(sys.version)",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 15:43:35.428",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.zeppelin.interpreter.InterpreterException: org.apache.zeppelin.interpreter.InterpreterException: Fail to open PythonInterpreter\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:76)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:861)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:769)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:186)\n\tat org.apache.zeppelin.scheduler.AbstractScheduler.runJob(AbstractScheduler.java:135)\n\tat org.apache.zeppelin.scheduler.FIFOScheduler.lambda$runJobInScheduler$0(FIFOScheduler.java:42)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\nCaused by: org.apache.zeppelin.interpreter.InterpreterException: Fail to open PythonInterpreter\n\tat org.apache.zeppelin.python.PythonInterpreter.open(PythonInterpreter.java:121)\n\tat org.apache.zeppelin.spark.PySparkInterpreter.open(PySparkInterpreter.java:92)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:70)\n\t... 8 more\nCaused by: java.io.IOException: Fail to launch python process.\norg.apache.commons.exec.ExecuteException: Execution failed (Exit value: -559038737. Caused by java.io.IOException: Cannot run program \"/usr/bin/python3\" (in directory \".\"): error\u003d2, No such file or directory)\n\tat org.apache.commons.exec.DefaultExecutor$1.run(DefaultExecutor.java:205)\n\tat java.lang.Thread.run(Thread.java:750)\nCaused by: java.io.IOException: Cannot run program \"/usr/bin/python3\" (in directory \".\"): error\u003d2, No such file or directory\n\tat java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)\n\tat java.lang.Runtime.exec(Runtime.java:593)\n\tat org.apache.commons.exec.launcher.Java13CommandLauncher.exec(Java13CommandLauncher.java:61)\n\tat org.apache.commons.exec.DefaultExecutor.launch(DefaultExecutor.java:279)\n\tat org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:336)\n\tat org.apache.commons.exec.DefaultExecutor.access$200(DefaultExecutor.java:48)\n\tat org.apache.commons.exec.DefaultExecutor$1.run(DefaultExecutor.java:200)\n\t... 1 more\nCaused by: java.io.IOException: error\u003d2, No such file or directory\n\tat java.lang.UNIXProcess.forkAndExec(Native Method)\n\tat java.lang.UNIXProcess.\u003cinit\u003e(UNIXProcess.java:247)\n\tat java.lang.ProcessImpl.start(ProcessImpl.java:134)\n\tat java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)\n\t... 7 more\n\n\tat org.apache.zeppelin.python.PythonInterpreter.createGatewayServerAndStartScript(PythonInterpreter.java:165)\n\tat org.apache.zeppelin.python.PythonInterpreter.open(PythonInterpreter.java:118)\n\t... 10 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733844592976_713265199",
+      "id": "paragraph_1733844592976_713265199",
+      "dateCreated": "2024-12-10 15:29:52.980",
+      "dateStarted": "2024-12-10 15:43:35.481",
+      "dateFinished": "2024-12-10 15:44:03.127",
+      "status": "ERROR"
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql import SparkSession\n\n# Kafka broker and topic\nkafka_broker \u003d \"kafka:9092\"\nkafka_topic \u003d \"test_topic\"\n\n# Initialize Spark Session\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkMemorySink\") \\\n    .getOrCreate()\n\n# Read data from Kafka topic\nkafka_stream \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", kafka_broker) \\\n    .option(\"subscribe\", kafka_topic) \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\n# Select message value and convert to string\nmessages \u003d kafka_stream.selectExpr(\"CAST(value AS STRING) as message\")\n\n# Write to memory sink\nquery \u003d messages.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"memory\") \\\n    .queryName(\"kafka_messages\") \\\n    .start()\n\n# Simulate processing\nimport time\nprint(\"Streaming started... Run the following to view data:\")\nprint(\"spark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\")\n\n# Let the stream run indefinitely\ntry:\n    while True:\n        time.sleep(10)\n        spark.sql(\"SELECT * FROM kafka_messages\").show(truncate\u003dFalse)\nexcept KeyboardInterrupt:\n    print(\"Stream stopped.\")\n    query.stop()    ",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 22:11:21.920",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Streaming started... Run the following to view data:\nspark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733868716.400934, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733868718.6322052, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868720.894551, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733868723.1740644, \"city\": \"Paris\"}|\n+--------------------------------------------------------------------+\n\n+--------------------------------------------------------------------+\n|message                                                             |\n+--------------------------------------------------------------------+\n|{\"temperature\": 6, \"timestamp\": 1733868716.400934, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733868718.6322052, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868720.894551, \"city\": \"Paris\"} |\n|{\"temperature\": 6, \"timestamp\": 1733868723.1740644, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868725.4232628, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868727.6660454, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868729.9052024, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868732.1981888, \"city\": \"Paris\"}|\n|{\"temperature\": 6, \"timestamp\": 1733868734.4785674, \"city\": \"Paris\"}|\n+--------------------------------------------------------------------+\n\nStream stopped.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d5"
+            },
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d11"
+            },
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d12"
+            },
+            {
+              "jobUrl": "http://namenode:4042/jobs/job?id\u003d13"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733844649091_913742777",
+      "id": "paragraph_1733844649091_913742777",
+      "dateCreated": "2024-12-10 15:30:49.093",
+      "dateStarted": "2024-12-10 22:11:21.943",
+      "dateFinished": "2024-12-10 22:12:24.590",
+      "status": "ABORT"
+    },
+    {
+      "text": "%spark.pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-10 22:11:21.942",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1733868681940_1819653142",
+      "id": "paragraph_1733868681940_1819653142",
+      "dateCreated": "2024-12-10 22:11:21.942",
+      "status": "READY"
+    }
+  ],
+  "name": "pytesting",
+  "id": "2KHBQAP4T",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

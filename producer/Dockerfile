@@ -11,4 +11,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Lancement du projet
-CMD ["python" ,"producer.py"]
+CMD ["python" ,"produce.py"]

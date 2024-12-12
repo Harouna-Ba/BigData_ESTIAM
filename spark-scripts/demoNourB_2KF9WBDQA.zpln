@@ -1,0 +1,286 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nspotify_data \u003d spark.read.option(\"header\", True).csv(\"hdfs://namenode:8020/sample_data/spotify-2023.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-12 11:25:30.326",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d0"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1734002695269_530184171",
+      "id": "paragraph_1734002695269_530184171",
+      "dateCreated": "2024-12-12 11:24:55.269",
+      "dateStarted": "2024-12-12 11:25:30.478",
+      "dateFinished": "2024-12-12 11:28:19.532",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nspotify_data.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-12 11:31:14.194",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------------+------------+-------------+--------------+------------+--------------------+-----------------+----------+------------------+---------------+-------------------+----------------+----------------+---+----+-----+--------------+---------+--------+--------------+------------------+----------+-------------+\n|          track_name|      artist(s)_name|artist_count|released_year|released_month|released_day|in_spotify_playlists|in_spotify_charts|   streams|in_apple_playlists|in_apple_charts|in_deezer_playlists|in_deezer_charts|in_shazam_charts|bpm| key| mode|danceability_%|valence_%|energy_%|acousticness_%|instrumentalness_%|liveness_%|speechiness_%|\n+--------------------+--------------------+------------+-------------+--------------+------------+--------------------+-----------------+----------+------------------+---------------+-------------------+----------------+----------------+---+----+-----+--------------+---------+--------+--------------+------------------+----------+-------------+\n|Seven (feat. Latt...|    Latto, Jung Kook|           2|         2023|             7|          14|                 553|              147| 141381703|                43|            263|                 45|              10|             826|125|   B|Major|            80|       89|      83|            31|                 0|         8|            4|\n|                LALA|         Myke Towers|           1|         2023|             3|          23|                1474|               48| 133716286|                48|            126|                 58|              14|             382| 92|  C#|Major|            71|       61|      74|             7|                 0|        10|            4|\n|             vampire|      Olivia Rodrigo|           1|         2023|             6|          30|                1397|              113| 140003974|                94|            207|                 91|              14|             949|138|   F|Major|            51|       32|      53|            17|                 0|        31|            6|\n|        Cruel Summer|        Taylor Swift|           1|         2019|             8|          23|                7858|              100| 800840817|               116|            207|                125|              12|             548|170|   A|Major|            55|       58|      72|            11|                 0|        11|           15|\n|      WHERE SHE GOES|           Bad Bunny|           1|         2023|             5|          18|                3133|               50| 303236322|                84|            133|                 87|              15|             425|144|   A|Minor|            65|       23|      80|            14|                63|        11|            6|\n|            Sprinter|   Dave, Central Cee|           2|         2023|             6|           1|                2186|               91| 183706234|                67|            213|                 88|              17|             946|141|  C#|Major|            92|       66|      58|            19|                 0|         8|           24|\n|     Ella Baila Sola|Eslabon Armado, P...|           2|         2023|             3|          16|                3090|               50| 725980112|                34|            222|                 43|              13|             418|148|   F|Minor|            67|       83|      76|            48|                 0|         8|            3|\n|            Columbia|             Quevedo|           1|         2023|             7|           7|                 714|               43|  58149378|                25|             89|                 30|              13|             194|100|   F|Major|            67|       26|      71|            37|                 0|        11|            4|\n|            fukumean|               Gunna|           1|         2023|             5|          15|                1096|               83|  95217315|                60|            210|                 48|              11|             953|130|  C#|Minor|            85|       22|      62|            12|                 0|        28|            9|\n|     La Bebe - Remix|Peso Pluma, Yng L...|           2|         2023|             3|          17|                2953|               44| 553634067|                49|            110|                 66|              13|             339|170|   D|Minor|            81|       56|      48|            21|                 0|         8|           33|\n|           un x100to|Bad Bunny, Grupo ...|           2|         2023|             4|          17|                2876|               40| 505671438|                41|            205|                 54|              12|             251| 83|  F#|Minor|            57|       56|      72|            23|                 0|        27|            5|\n|           Super Shy|            NewJeans|           1|         2023|             7|           7|                 422|               55|  58255150|                37|            202|                 21|               5|             168|150|   F|Minor|            78|       52|      82|            18|                 0|        15|            7|\n|             Flowers|         Miley Cyrus|           1|         2023|             1|          12|               12211|              115|1316855716|               300|            215|                745|              58|           1,021|118|NULL|Major|            71|       65|      68|             6|                 0|         3|            7|\n|            Daylight|       David Kushner|           1|         2023|             4|          14|                3528|               98| 387570742|                80|            156|                182|              24|           1,281|130|   D|Minor|            51|       32|      43|            83|                 0|         9|            3|\n|           As It Was|        Harry Styles|           1|         2022|             3|          31|               23575|              130|2513188493|               403|            198|                863|              46|            NULL|174|  F#|Minor|            52|       66|      73|            34|                 0|        31|            6|\n|           Kill Bill|                 SZA|           1|         2022|            12|           8|                8109|               77|1163093654|               183|            162|                161|              12|             187| 89|  G#|Major|            64|       43|      73|             5|                17|        16|            4|\n|   Cupid - Twin Ver.|         Fifty Fifty|           1|         2023|             2|          24|                2942|               77| 496795686|                91|            212|                 78|               6|               0|120|   B|Minor|            78|       76|      59|            43|                 0|        34|            3|\n|\"What Was I Made ...|       Billie Eilish|           1|         2023|             7|          13|                 873|              104|  30546883|                80|            227|                 95|              24|           1,173| 78|NULL|Major|            44|       14|       9|            96|                 0|        10|            3|\n|          Classy 101|    Feid, Young Miko|           2|         2023|             3|          31|                2610|               40| 335222234|                43|            100|                 54|              14|             187|100|   B|Major|            86|       67|      66|            14|                 0|        12|           16|\n|          Like Crazy|               Jimin|           1|         2023|             3|          24|                 596|               68| 363369738|                 8|            104|                 23|               2|              29|120|   G|Major|            63|       36|      73|             0|                 0|        36|            4|\n+--------------------+--------------------+------------+-------------+--------------+------------+--------------------+-----------------+----------+------------------+---------------+-------------------+----------------+----------------+---+----+-----+--------------+---------+--------+--------------+------------------+----------+-------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1734002778105_167495974",
+      "id": "paragraph_1734002778105_167495974",
+      "dateCreated": "2024-12-12 11:26:18.128",
+      "dateStarted": "2024-12-12 11:31:14.262",
+      "dateFinished": "2024-12-12 11:31:32.906",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nspotify_data \u003d spark.read.option(\"header\", True).csv(\"hdfs://namenode:8020/sample_data/spotify-2023.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-12 11:34:55.785",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d2"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1734003024308_2119555101",
+      "id": "paragraph_1734003024308_2119555101",
+      "dateCreated": "2024-12-12 11:30:24.337",
+      "dateStarted": "2024-12-12 11:34:55.950",
+      "dateFinished": "2024-12-12 11:35:10.720",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n# Importer les fonctions nécessaires\nfrom pyspark.sql.functions import col, desc, avg\n\n \n# 1. Artiste avec le plus de pistes\n# Supposons que le nom correct de la colonne soit \u0027artist(s)_name\u0027 (à vérifier)\nartist_count \u003d spotify_data.groupBy(\"artist(s)_name\").count()  # Remplacer \"artist\" par \"artist(s)_name\" ou le nom correct\nmost_prolific_artist \u003d artist_count.orderBy(desc(\"count\")).first()\nprint(f\"L\u0027artiste avec le plus de pistes : {most_prolific_artist[\u0027artist(s)_name\u0027]} ({most_prolific_artist[\u0027count\u0027]} pistes)\")\n \n# 2. Piste avec le plus grand nombre de streams\ntop_track \u003d spotify_data.orderBy(desc(\"streams\")).select(\"track_name\", \"artist(s)_name\", \"streams\").first()  # Assurez-vous de vérifier \u0027track_name\u0027 et \u0027artist(s)_name\u0027\nprint(f\"Piste avec le plus de streams : {top_track[\u0027track_name\u0027]} par {top_track[\u0027artist(s)_name\u0027]} ({top_track[\u0027streams\u0027]} streams)\")\n \n ",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-12 11:55:56.780",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "L\u0027artiste avec le plus de pistes : Taylor Swift (34 pistes)\nPiste avec le plus de streams : Love Grows (Where My Rosemary Goes) par Edison Lighthouse (BPM110KeyAModeMajorDanceability53Valence75Energy69Acousticness7Instrumentalness0Liveness17Speechiness3 streams)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d9"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d10"
+            },
+            {
+              "jobUrl": "http://namenode:4040/jobs/job?id\u003d11"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1734004369814_256418021",
+      "id": "paragraph_1734004369814_256418021",
+      "dateCreated": "2024-12-12 11:52:49.865",
+      "dateStarted": "2024-12-12 11:55:56.925",
+      "dateFinished": "2024-12-12 11:56:12.209",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-12 12:09:51.638",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1734005391613_1501339525",
+      "id": "paragraph_1734005391613_1501339525",
+      "dateCreated": "2024-12-12 12:09:51.638",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\nfrom pyspark.sql import SparkSession\n\n#Kafka broker and topic\nkafka_broker \u003d \"kafka:9092\"\nkafka_topic \u003d \"test_topic\"\n\n# Initialize Spark Session\nspark \u003d SparkSession.builder \\\n    .appName(\"KafkaSparkMemorySink\") \\\n    .getOrCreate()\n\n# Read data from Kafka topic\nkafka_stream \u003d spark.readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", kafka_broker) \\\n    .option(\"subscribe\", kafka_topic) \\\n    .option(\"startingOffsets\", \"latest\") \\\n    .load()\n\n# Select message value and convert to string\nmessages \u003d kafka_stream.selectExpr(\"CAST(value AS STRING) as message\")\n\n# Write to memory sink\nquery \u003d messages.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"memory\") \\\n    .queryName(\"kafka_messages\") \\\n    .start()\n\n# Simulate processing\nimport time\nprint(\"Streaming started... Run the following to view data:\")\nprint(\"spark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\")\n\n# Let the stream run indefinitely\ntry:\n    while True:\n        time.sleep(10)\n        spark.sql(\"SELECT * FROM kafka_messages\").show(truncate\u003dFalse)\nexcept KeyboardInterrupt:\n    print(\"Stream stopped.\")\n    query.stop()    ",
+      "user": "anonymous",
+      "dateUpdated": "2024-12-12 12:09:51.550",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Streaming started... Run the following to view data:\nspark.sql(\u0027SELECT * FROM kafka_messages\u0027).show()\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\n+-------+\n|message|\n+-------+\n+-------+\n\nStream stopped.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1734004711957_514273802",
+      "id": "paragraph_1734004711957_514273802",
+      "dateCreated": "2024-12-12 11:58:31.961",
+      "dateStarted": "2024-12-12 12:09:51.635",
+      "dateFinished": "2024-12-12 12:24:00.762",
+      "status": "ABORT"
+    }
+  ],
+  "name": "demoNourB",
+  "id": "2KF9WBDQA",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
